@@ -1,6 +1,6 @@
 # Stroll
 
-A modern location discovery app built with React, TypeScript, and Tailwind CSS.
+A novel location discovery app built with React, TypeScript, and Tailwind CSS.
 
 ## Features
 
@@ -8,7 +8,6 @@ A modern location discovery app built with React, TypeScript, and Tailwind CSS.
 - 📍 Save favorite spots
 - 🗂️ Organize locations in boards
 - 👤 User profiles
-- 📱 Responsive design
 
 ## Tech Stack
 
