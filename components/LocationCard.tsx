@@ -1,4 +1,5 @@
 import { MapPin, Heart, MessageCircle, Bookmark } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import type { Location } from '../types';
 
 interface LocationCardProps {
@@ -15,6 +16,11 @@ export function LocationCard({ location, onSave, isSaved, onClick }: LocationCar
       className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer active:scale-[0.98]"
     >
       <div className="relative">
+        <ImageWithFallback
+          src={location.image}
+          alt={location.name}
+          className="w-full aspect-square object-cover"
+        />
         <button
           onClick={(e) => {
             e.stopPropagation();

@@ -1,4 +1,5 @@
 import { X, MapPin, Heart, MessageCircle, Bookmark, Share2 } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import type { Location } from '../types';
 
 interface LocationDetailModalProps {
@@ -34,6 +35,12 @@ export function LocationDetailModal({ location, isSaved, onClose, onSave }: Loca
 
         {/* Scrollable Content */}
         <div className="overflow-y-auto max-h-[calc(90vh-60px)]">
+          {/* Image */}
+          <ImageWithFallback
+            src={location.image}
+            alt={location.name}
+            className="w-full h-80 object-cover"
+          />
 
           {/* Content */}
           <div className="p-4">
@@ -74,6 +81,11 @@ export function LocationDetailModal({ location, isSaved, onClose, onSave }: Loca
                 <h3 className="mb-3">Comments</h3>
                 {location.comments.map((comment) => (
                   <div key={comment.id} className="flex gap-3 mb-3">
+                    <ImageWithFallback
+                      src={comment.avatar}
+                      alt={comment.username}
+                      className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+                    />
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-0.5">
                         <span className="text-sm">{comment.username}</span>

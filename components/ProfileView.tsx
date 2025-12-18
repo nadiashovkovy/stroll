@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Settings, Grid3x3, Bookmark, MapPin } from 'lucide-react';
+import { ImageWithFallback } from './figma/ImageWithFallback';
 import type { User, Location } from '../types';
 
 interface ProfileViewProps {
@@ -21,6 +22,11 @@ export function ProfileView({ user, locations, savedLocationIds, onLocationClick
       <div className="px-4 pt-6 pb-4 bg-white border-b border-gray-200">
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
+            <ImageWithFallback
+              src={user.avatar}
+              alt={user.name}
+              className="w-16 h-16 rounded-full object-cover"
+            />
             <div>
               <h3 className="mb-0.5">{user.name}</h3>
               <p className="text-sm text-gray-600">{user.username}</p>
@@ -101,6 +107,11 @@ export function ProfileView({ user, locations, savedLocationIds, onLocationClick
                   onClick={() => onLocationClick(location.id)}
                   className="aspect-square relative rounded-lg overflow-hidden cursor-pointer active:scale-95 transition-transform"
                 >
+                  <ImageWithFallback
+                    src={location.image}
+                    alt={location.name}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-1.5">
                     <p className="text-[11px] text-white line-clamp-1">{location.name}</p>
@@ -127,6 +138,11 @@ export function ProfileView({ user, locations, savedLocationIds, onLocationClick
                   onClick={() => onLocationClick(location.id)}
                   className="aspect-square relative rounded-lg overflow-hidden cursor-pointer active:scale-95 transition-transform"
                 >
+                  <ImageWithFallback
+                    src={location.image}
+                    alt={location.name}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-1.5">
                     <p className="text-[11px] text-white line-clamp-1">{location.name}</p>
